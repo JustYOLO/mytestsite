@@ -1,4 +1,5 @@
 {% if todos %}
+<!-- todo가 존재하면 표시 -->
 
 <div class="card" style="width: 18rem;">
     <ul class="list-group list-group-flush">
@@ -9,9 +10,9 @@
             </div>
             <div>
                 <span class="action badge rounded-pill text-bg-warning" hx-get="{% url 'mark_todo' todo.pk %}"
-                  hx-target="#todoList" style="cursor: pointer;">✔</span>
+                    hx-target="#todoList" style="cursor: pointer;">✔</span>
                 <span class="action badge rounded-pill text-bg-danger" hx-delete="{% url 'delete_todo' todo.pk %}"
-                  hx-target="#todoList" hx-confirm="Are you sure you wish to delete?" style="cursor: pointer;">X</span>
+                    hx-target="#todoList" hx-confirm="Are you sure you wish to delete?" style="cursor: pointer;">X</span>
             </div>
         </li>
         {% endfor %}
@@ -19,7 +20,7 @@
 </div>
 
 {% else %}
-
+<!-- todo가 없으면 표시 -->
 <h5>Currently, you don't have any todos.</h5>
 
 {% endif %}
